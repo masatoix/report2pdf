@@ -99,6 +99,13 @@ for i in range(num):
     pg.hotkey('command', 'down')
     generate_pdf()
 #%%
+print(
+    """
+    Conguratulations!
+    ALL REPORT has been GERATED as PDF!
+    """
+)
+#%%
 # pg.position()
 
 #%%
