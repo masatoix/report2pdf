@@ -13,7 +13,7 @@ exported_files = '/Users/masatoi/Google ドライブ/Python/FUSiON_Report/export
 def folder_open():
     # Folder open
     subprocess.Popen(['open', exported_files])
-    time.sleep(3)
+    time.sleep(4)
 
 def generate_pdf():
     # To create PDF file, change some settings
@@ -72,7 +72,7 @@ def generate_pdf():
 folder_open()
 
 # First file and Select top of file and open the file
-pg.hotkey('option', 'up')
+# pg.hotkey('option', 'up')
 pg.hotkey('option', 'up')
 time.sleep(1)
 pg.hotkey('command', 'down')
@@ -93,7 +93,7 @@ for i in range(num):
 print(
     """
     Conguratulations!
-    ALL REPORT has been GERATED as PDF!
+    ALL REPORTS have been GERATED as PDF!
     """
 )
 #%%

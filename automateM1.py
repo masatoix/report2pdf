@@ -11,19 +11,9 @@ exported_files = '/Users/masatoi/Google ドライブ/Python/FUSiON_Report/export
 #%%
 
 def folder_open():
-    # Lauch Alfred
-    # pg.hotkey('option', 'space')
-    # time.sleep(1)
     # Folder open
     subprocess.Popen(['open', exported_files])
-    time.sleep(1)
-
-    # Type folder name and open the folder
-    # pg.typewrite('exported_files')
-    # time.sleep(1)
-    
-    # pg.hotkey('return')
-    # time.sleep(0.5)
+    time.sleep(4)
 
 def generate_pdf():
     # To create PDF file, change some settings
