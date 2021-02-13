@@ -11,19 +11,9 @@ exported_files = '/Users/masatoi/Google ドライブ/Python/FUSiON_Report/export
 #%%
 
 def folder_open():
-    # Lauch Alfred
-    # pg.hotkey('option', 'space')
-    # time.sleep(1)
     # Folder open
     subprocess.Popen(['open', exported_files])
-    time.sleep(1)
-
-    # Type folder name and open the folder
-    # pg.typewrite('exported_files')
-    # time.sleep(1)
-    
-    # pg.hotkey('return')
-    # time.sleep(0.5)
+    time.sleep(3)
 
 def generate_pdf():
     # To create PDF file, change some settings
@@ -75,7 +65,6 @@ def generate_pdf():
 
     # Close xlsx file
     pg.hotkey('command', 'w')
-    time.sleep(1)
     pg.hotkey('command', 'd')
     time.sleep(1)
 
@@ -84,6 +73,7 @@ folder_open()
 
 # First file and Select top of file and open the file
 pg.hotkey('option', 'up')
+pg.hotkey('option', 'up')
 time.sleep(1)
 pg.hotkey('command', 'down')
 time.sleep(3)
@@ -91,6 +81,7 @@ generate_pdf()
 #%%
 num = len(os.listdir(exported_files))
 num -= 2
+
 #%%
 for i in range(num):
     folder_open()
