@@ -20,7 +20,7 @@ def folder_open():
 def generate_pdf():
     # To create PDF file, change some settings
     time.sleep(4)
-    pg.hotkey('command', 'p')
+    pg.hotkey('command', 'p', interval=0.25)
     time.sleep(1)
 
     # Document mergin change to narrow
@@ -67,7 +67,7 @@ def generate_pdf():
 
     # Close xlsx file
     pg.hotkey('command', 'w')
-    pg.hotkey('command', 'd')
+    pg.hotkey('command', 'd', interval=0.25)
     time.sleep(1)
 
 #%%
