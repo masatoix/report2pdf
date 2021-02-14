@@ -4,9 +4,11 @@ import time
 import os
 import glob
 import subprocess
+import sys
 
 pg.FAILSAFE = True
 exported_files = '/Users/masatoi/Google ドライブ/Python/FUSiON_Report/exported_files/'
+generated_pdfs = '/Users/masatoi/Google ドライブ/Python/FUSiON_Report/generated_pdfs/'
 
 #%%
 
@@ -17,7 +19,7 @@ def folder_open():
 
 def generate_pdf():
     # To create PDF file, change some settings
-    time.sleep(3)
+    time.sleep(4)
     pg.hotkey('command', 'p')
     time.sleep(1)
 
@@ -69,15 +71,21 @@ def generate_pdf():
     time.sleep(1)
 
 #%%
-folder_open()
 
-# First file and Select top of file and open the file
-# pg.hotkey('option', 'up')
-pg.hotkey('option', 'up')
-time.sleep(1)
-pg.hotkey('command', 'down')
-time.sleep(3)
-generate_pdf()
+pdfs = os.listdir(generated_pdfs)
+print(pdfs)
+if len(pdfs) >= 2:
+    sys.exit('Any file exists. Please DELETE it!')
+else:
+    folder_open()
+
+    # First file and Select top of file and open the file
+    # pg.hotkey('option', 'up')
+    pg.hotkey('option', 'up')
+    time.sleep(1)
+    pg.hotkey('command', 'down')
+    time.sleep(3)
+    generate_pdf()
 #%%
 num = len(os.listdir(exported_files))
 num -= 2
@@ -101,3 +109,4 @@ print(
 
 #%%
 # pg.size()
+# %%
