@@ -66,8 +66,7 @@ def generate_pdf():
     time.sleep(1)
 
     # Close xlsx file
-    pg.hotkey('command', 'w')
-    time.sleep(1)
+    pg.hotkey('command', 'w', interval=0.25)
     pg.hotkey('command', 'd', interval=0.25)
     time.sleep(1)
 
@@ -77,13 +76,15 @@ print(pdfs)
 if len(pdfs) >= 2:
     sys.exit('Any file exists. Please DELETE it!')
 else:
+    subprocess.Popen(['open', generated_pdfs])
+    time.sleep(3)
     folder_open()
 
     # First file and Select top of file and open the file
     # pg.hotkey('option', 'up')
-    pg.hotkey('option', 'up')
+    pg.hotkey('option', 'up', interval=0.3)
     time.sleep(1)
-    pg.hotkey('command', 'down')
+    pg.hotkey('command', 'down', interval=0.3)
     time.sleep(3)
     generate_pdf()
 #%%
